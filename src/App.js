@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Home from './components/Home'
 import About from './components/About'
 import Contact from'./components/Contact'
@@ -15,13 +15,14 @@ class App extends Component {
                   <a className="navbar-brand" href="/#">WEB</a>
                   <ul className="nav navbar-nav">
                      <li className="active">
-                        <a href="/">Trang chủ</a>
+                        <Link to="/" className="my-link">Trang chủ</Link>
+                        {/* <a href="/">Trang chủ</a> */}
                      </li>
                      <li>
-                        <a href="/about">Giới thiệu</a>
+                        <Link to="/about" className="my-link">Giới thiệu</Link>
                      </li>
                      <li>
-                        <a href="/contact">Liên hệ</a>
+                        <Link to="/contact" className="my-link">Liên hệ</Link>
                      </li>
                   </ul>
                </nav>
