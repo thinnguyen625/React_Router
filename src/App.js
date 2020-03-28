@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import Home from './components/Home'
 import About from './components/About'
 import Contact from'./components/Contact'
@@ -14,15 +14,23 @@ class App extends Component {
                <nav className="navbar navbar-inverse">
                   <a className="navbar-brand" href="/#">WEB</a>
                   <ul className="nav navbar-nav">
-                     <li className="active">
-                        <Link to="/" className="my-link">Trang chủ</Link>
-                        {/* <a href="/">Trang chủ</a> */}
+                     <li>
+                        <NavLink activeStyle={{
+                           backgroundColor : 'white',
+                           color : 'red'
+                        }} exact to="/" className="my-link active">Trang chủ</NavLink>
                      </li>
                      <li>
-                        <Link to="/about" className="my-link">Giới thiệu</Link>
+                        <NavLink activeStyle={{
+                           backgroundColor : 'white',
+                           color : 'red'
+                        }} to="/about" className="my-link active">Giới thiệu</NavLink>
                      </li>
                      <li>
-                        <Link to="/contact" className="my-link">Liên hệ</Link>
+                        <NavLink activeStyle={{
+                           backgroundColor : 'white',
+                           color : 'red'
+                        }} to="/contact" className="my-link active">Liên hệ</NavLink>
                      </li>
                   </ul>
                </nav>
