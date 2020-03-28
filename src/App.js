@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Home from './components/Home'
+import About from './components/About'
+import Contact from'./components/Contact'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+   render() {
+      return (
+         <Router>
+            <div className="App">
+               {/* Menu */}
+               <nav className="navbar navbar-inverse">
+                  <a className="navbar-brand" href="/#">WEB</a>
+                  <ul className="nav navbar-nav">
+                     <li className="active">
+                        <a href="/">Trang chủ</a>
+                     </li>
+                     <li>
+                        <a href="/about">Giới thiệu</a>
+                     </li>
+                     <li>
+                        <a href="/contact">Liên hệ</a>
+                     </li>
+                  </ul>
+               </nav>
+               {/* Nội dung */}
+
+               <Route path="/" exact component={Home} />
+               <Route path="/about" component={About} />
+               <Route path="/contact" component={Contact} />
+
+            </div>
+         </Router>
+      );
+   }
 }
 
 export default App;
