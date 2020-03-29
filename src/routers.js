@@ -1,7 +1,8 @@
 import React from 'react';
 import Home from './components/Home';
 import About from './components/About';
-import Contact from'./components/Contact';
+import Contact from './components/Contact';
+import Product from './components/Products'
 import NotFound from './components/NotFound';
 
 
@@ -20,6 +21,11 @@ const routes = [
         path : '/contact',
         exact : false,
         main : () => <Contact />
+    },
+    {
+        path : '/products',
+        exact : false,
+        main : ({match}) => <Product match={match} />
     },
     {
         path : '',
