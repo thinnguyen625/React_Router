@@ -21,12 +21,12 @@ class Contact extends Component {
             Đây là trang liên hệ <br/>
             <button 
                type="button" 
-               class="btn btn-info"
+               className="btn btn-info"
                onClick = {()=>this.onClick(false)}
             >Cho phép</button><br/>
             <button 
                type="button" 
-               class="btn btn-danger"
+               className="btn btn-danger"
                onClick = {()=>this.onClick(true)}
             >Không cho phép</button><br/>
             <Prompt
